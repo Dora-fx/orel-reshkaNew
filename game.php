@@ -29,23 +29,22 @@
         echo ($action);
 
     ?>" method="POST">
-
-        <p>
-            <label><input name="counter" value="<?= $counter ?>" type="number" readonly></label>
-        </p>
+        
         <label><input value="<?= $_POST["level"] ?>" name="level" type="hidden"></label>
         <?php 
             
     
             $level = $_POST["level"];
             var_dump($_POST);
+            $gameResult = "";
             
             if (isset($_POST["chouse"])) {
                 $chouse = $_POST["chouse"];
                 $result = rand(0,2);
                 echo ("<p>Level: $level</p>");
-                $gameResult = "";
                 
+                
+
                 switch ($level) {
                     case "easy":
                         if ($chouse == $result || $result == "2") {
@@ -76,6 +75,7 @@
                         }
                 }
             }
+
             if ($gameResult == "Win") {
                 $keepResultWin += 1;
                 if ($chouse == "0") {
@@ -92,6 +92,8 @@
                 }
             }
             echo ('
+                <label><input value="' .$keepResultWin. '" name="Win" type="hidden"></label>
+                <label><input value="' .$keepResultLoose. '" name="Loose" type="hidden"></label>
                 <label><input name="counter" value="' .$counter. '" type="number" readonly></label>
             ');
             if ($counter < 10) {

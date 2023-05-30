@@ -5,24 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<?php
-    if ($gameResult == "Win") {
-        if ($chouse == "0") {
-            echo ("Orel");
+    <?php
+        var_dump($_POST);
+        $keepResultWin = $_POST["Win"];
+        $keepResultLoose = $_POST["Loose"];
+
+        if ($keepResultWin > $keepResultLoose) {
+            echo ("Win");
         } else {
-            echo ("Reshka");
+            echo ("Loose"); 
         }
-    } else if ($gameResult == "Loose") {
-        if ($chouse !== "1") {
-            echo ("Reshka");
-        } else {
-            echo ("Orel");
-        }
-    
-    }
-?>    
+    ?>    
+    <form action="" method="POST"></form>
 
 </body>
 </html>
