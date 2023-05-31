@@ -35,7 +35,6 @@
             
     
             $level = $_POST["level"];
-            var_dump($_POST);
             $gameResult = "";
             
             if (isset($_POST["chouse"])) {
@@ -44,38 +43,39 @@
                 echo ("<p>Level: $level</p>");
                 
                 
-
+                echo ('<p>');
                 switch ($level) {
                     case "easy":
                         if ($chouse == $result || $result == "2") {
                             $gameResult = "Win";
-                            echo ("WinEasy");
+                            echo ("Win");
                         } else {
                             $gameResult = "Loose";
-                            echo ("LooseEasy");
+                            echo ("Loose");
                         }
                         break;
                     case "medium":
                         $result = rand(0,1);
                         if ($chouse == $result) {
                             $gameResult = "Win";
-                            echo ("WinMedium");
+                            echo ("Win");
                         } else {
                             $gameResult = "Loose";
-                            echo ("LooseMedium");
+                            echo ("Loose");
                         }
                         break;
                     default:
                         if ($chouse != $result || $result == "2") {
                             $gameResult = "Loose";
-                            echo ("LooseHard");
+                            echo ("Loose");
                         } else {
                             $gameResult = "Win";
-                            echo ("WinHard");
+                            echo ("Win");
                         }
                 }
+                echo ('</p>');
             }
-
+            echo ('<p>');
             if ($gameResult == "Win") {
                 $keepResultWin += 1;
                 if ($chouse == "0") {
@@ -91,10 +91,15 @@
                     echo ("Orel");
                 }
             }
+            echo ('</p>');
             echo ('
                 <label><input value="' .$keepResultWin. '" name="Win" type="hidden"></label>
                 <label><input value="' .$keepResultLoose. '" name="Loose" type="hidden"></label>
+                <h4>Games played</h4>
                 <label><input name="counter" value="' .$counter. '" type="number" readonly></label>
+                <p>Win = ' .$keepResultWin. '</p>
+                <p>Loose = ' .$keepResultLoose. '</p>
+
             ');
             if ($counter < 10) {
                 echo ('

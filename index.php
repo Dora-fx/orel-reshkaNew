@@ -9,11 +9,9 @@
 </head>
 <body>
     <form action="game.php" method="POST">
-        <h1>Chouse level</h1>
-        <label><input name="level" value="easy" type="radio">Easy</label>
-        <label><input name="level" value="medium" type="radio">Medium</label>
-        <label><input name="level" value="hard" type="radio">Hard</label>
-        <p><label><input value="Start" type="submit"></label></p>
+        <h1>Greetings</h1>
+        <label><input name="level" value="easy" type="hidden"></label>
+        <p><label><input value="Let's play" type="submit"></label></p>
     </form>
     <?php
     
