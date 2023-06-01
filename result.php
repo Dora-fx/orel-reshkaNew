@@ -14,26 +14,31 @@
             $keepResultLoose = $_POST["Loose"];
             $level = $_POST["level"];
             $buttonText = "Next Level";
-
+            echo ("<h1>");
             if ($keepResultWin > $keepResultLoose) {
+                if ($level != "hard") {
+                    echo ('<img src="img/like.svg" alt="#"><br>');
+                }
                 if ($level == "easy") {
                     $level = "medium";
                 } else if ($level == "medium") {
                     $level = "hard";
                 } else if ($level == "hard") {
                     $buttonText = "Go on";
-                    echo ("!!!Congratulations!!!");
+                    echo ('
+                        Congratulations<br>
+                        <img src="img/greteengs.svg" alt="#"><br>
+                    ');
                 }
                 echo ("Win");
             } else {
                 $buttonText = "Try again";
                 echo ("Loose"); 
             }
-
+            echo ("</h1>");
             ?>    
       
-      <label><button value="<?= $level ?>" name="level" type="submit"><?= $buttonText ?></button></label>
+      <label><button class="button-style" value="<?= $level ?>" name="level" type="submit"><?= $buttonText ?></button></label>
     </form>
-
 </body>
 </html>

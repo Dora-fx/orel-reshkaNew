@@ -9,9 +9,9 @@
 </head>
 <body>
     <form action="game.php" method="POST">
-        <h1>Greetings</h1>
+        <h1>Greetings to Orel-Reshka game</h1>
         <label><input name="level" value="easy" type="hidden"></label>
-        <p><label><input value="Let's play" type="submit"></label></p>
+        <p><label><input class=" button-style start" value="Let's play" type="submit"></label></p>
     </form>
     <?php
     

@@ -95,20 +95,19 @@
             echo ('
                 <label><input value="' .$keepResultWin. '" name="Win" type="hidden"></label>
                 <label><input value="' .$keepResultLoose. '" name="Loose" type="hidden"></label>
-                <h4>Games played</h4>
-                <label><input name="counter" value="' .$counter. '" type="number" readonly></label>
+                <h2>Games played <label><input class="counter" name="counter" value="' .$counter. '" type="number" readonly></label></h2>
                 <p>Win = ' .$keepResultWin. '</p>
                 <p>Loose = ' .$keepResultLoose. '</p>
 
             ');
             if ($counter < 10) {
                 echo ('
-                    <label><button value="0" name="chouse" type="submit">Orel</button></label>
-                    <label><button value="1" name="chouse" type="submit">Reshka</button></label>
+                    <label><button class="button-style chouse" value="0" name="chouse" type="submit">Orel</button></label>
+                    <label><button class="button-style chouse" value="1" name="chouse" type="submit">Reshka</button></label>
                 ');
             } else {
                 echo ('
-                    <label><button type="submit">Results</button></label>
+                    <label><button class="button-style" type="submit">Results</button></label>
                 ');
             }
             

@@ -1,3 +1,56 @@
 body {
+    padding-top: 10px;
     text-align: center;
+}
+
+h1 {
+    letter-spacing: 1px;
+    color: #034;
+}
+
+button:hover {
+    background-color: lightpink;
+}
+
+p {
+    font-size: 20px;
+}
+
+img {
+    width: 130px;
+    color: goldenrod;
+}
+
+.button-style {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.start {
+    background-color: olivedrab;
+}
+
+.start:hover {
+    background-color: orange;
+}
+
+.counter {
+    border: none;
+    display: inline-block;
+    max-width: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+}
+
+.chouse {
+    background-color: goldenrod;
+}
+
+.chouse:hover {
+    background-color: silver;
 }
