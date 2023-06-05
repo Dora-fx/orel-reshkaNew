@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <?php
+        $levelBlocker = "two disabled";
+        if (isset($_POST["levelBlocker"])) {
+            $levelBlocker = $_POST["levelBlocker"];
+        }
+    ?>
     <form action="game.php" method="POST">
         <h1>Chouse level</h1>
+        <label><input type="hidden" name="levelBlocker" value="<?= $levelBlocker ?>"></label>
         <label><input name="level" value="easy" type="radio">Easy</label>
-        <label><input name="level" value="medium" type="radio">Medium</label>
-        <label><input name="level" value="hard" type="radio">Hard</label>
-        <p><label><input value="Start" type="submit"></label></p>
-    </form>
-    <?php
-    
-    ?>
+        <label><input name="level" value="medium" type="radio" <?= ($levelBlocker == "two disabled") ? "disabled" : "" ?>>Medium</label>
+        <label><input name="level" value="hard" type="radio" <?= ($levelBlocker == "two disabled" || $levelBlocker == "one disabled") ? "disabled" : "" ?>>Hard</label>
+        <p><label><input value="Start" type="submit"></label></p> 
+    </form> 
 </body>
 </html>

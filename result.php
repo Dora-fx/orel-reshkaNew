@@ -12,14 +12,24 @@
         var_dump($_POST);
         $keepResultWin = $_POST["Win"];
         $keepResultLoose = $_POST["Loose"];
+        $levelBlocker = $_POST["levelBlocker"];
+        $level = $_POST["level"];
 
         if ($keepResultWin > $keepResultLoose) {
+            if ($levelBlocker == "two disabled") {
+                $levelBlocker = "one disabled";
+            } else if ($levelBlocker == "one disabled" && $level == "medium") {
+                $levelBlocker = "";
+            }
             echo ("Win");
         } else {
             echo ("Loose"); 
         }
     ?>    
-    <form action="" method="POST"></form>
+    <form action="index.php" method="POST">
+    <label><input value="<?= $levelBlocker ?>" name="levelBlocker" type="hidden"></label>
+    <label><button type="submit">Try your luck</button></label>
+    </form>
 
 </body>
 </html>

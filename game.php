@@ -31,6 +31,8 @@
     ?>" method="POST">
         
         <label><input value="<?= $_POST["level"] ?>" name="level" type="hidden"></label>
+        <label><input value="<?= $_POST["levelBlocker"] ?>" name="levelBlocker" type="hidden"></label>
+
         <?php 
             
     
