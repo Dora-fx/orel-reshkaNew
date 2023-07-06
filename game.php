@@ -37,7 +37,6 @@
             
     
             $level = $_POST["level"];
-            var_dump($_POST);
             $gameResult = "";
             
             if (isset($_POST["chouse"])) {
@@ -51,29 +50,29 @@
                     case "easy":
                         if ($chouse == $result || $result == "2") {
                             $gameResult = "Win";
-                            echo ("WinEasy");
+                            echo ("<p>Win</p>");
                         } else {
                             $gameResult = "Loose";
-                            echo ("LooseEasy");
+                            echo ("<p>Loose</p>");
                         }
                         break;
                     case "medium":
                         $result = rand(0,1);
                         if ($chouse == $result) {
                             $gameResult = "Win";
-                            echo ("WinMedium");
+                            echo ("<p>Win</p>");
                         } else {
                             $gameResult = "Loose";
-                            echo ("LooseMedium");
+                            echo ("<p>Loose</p>");
                         }
                         break;
                     default:
                         if ($chouse != $result || $result == "2") {
                             $gameResult = "Loose";
-                            echo ("LooseHard");
+                            echo ("<p>Loose</p>");
                         } else {
                             $gameResult = "Win";
-                            echo ("WinHard");
+                            echo ("<p>Win</p>");
                         }
                 }
             }
@@ -81,16 +80,16 @@
             if ($gameResult == "Win") {
                 $keepResultWin += 1;
                 if ($chouse == "0") {
-                    echo ("Orel");
+                    echo ("<p>Orel</p>");
                 } else {
-                    echo ("Reshka");
+                    echo ("<p>Reshka</p>");
                 }
             } else if ($gameResult == "Loose") {
                 $keepResultLoose += 1;
                 if ($chouse !== "1") {
-                    echo ("Reshka");
+                    echo ("<p>Reshka</p>");
                 } else {
-                    echo ("Orel");
+                    echo ("<p>Orel</p>");
                 }
             }
             echo ('
@@ -100,8 +99,8 @@
             ');
             if ($counter < 10) {
                 echo ('
-                    <label><button value="0" name="chouse" type="submit">Orel</button></label>
-                    <label><button value="1" name="chouse" type="submit">Reshka</button></label>
+                    <p><label><button value="0" name="chouse" type="submit">Orel</button></label></p>
+                    <p><label><button value="1" name="chouse" type="submit">Reshka</button></label></p>
                 ');
             } else {
                 echo ('

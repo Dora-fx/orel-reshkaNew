@@ -9,7 +9,6 @@
 </head>
 <body>
     <?php
-        var_dump($_POST);
         $keepResultWin = $_POST["Win"];
         $keepResultLoose = $_POST["Loose"];
         $levelBlocker = $_POST["levelBlocker"];
